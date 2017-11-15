@@ -25,13 +25,11 @@ public class MainActivity extends AppCompatActivity {
         int no2 = converter.toInteger(edtNo2.getText().toString());
 
         Calculator calculator = new Calculator();
-        int result = -1;
         if(isAdd) {
-            result = calculator.add(no1, no2);
+            int result = calculator.add(no1, no2);
+            TextView tvResult = findViewById(R.id.tv_result);
+            tvResult.setText(String.format("Result = %s", result));
         }
-
-        TextView tvResult = findViewById(R.id.tv_result);
-        tvResult.setText(String.format("Result = %s", result));
     }
 
     public void onAdd(View view) {
